@@ -17,7 +17,6 @@ var isDog = function(animal) { // Callback function
 }
 
 var dogs = animals.filter(isDog)
-var notDogs = animals.reject(isDog)
 ```
 * Map - goes through an array and transforms the object
 ```
@@ -29,4 +28,23 @@ ES6:
 ```
 var names = animals.map((x) =>  x.name + ' is a ' + x.species)
 ```
-* Reduce - 
+* Reject - removes all specified from array
+```
+var notDogs = animals.reject(isDog)
+```
+* Find - finds in a array but only returns the first item
+* Reduce - can be used for any list transformation
+```
+var orders = [
+    {amount: 250},
+    {amount: 400},
+    {amount: 100},
+    {amount: 325}
+]
+
+var totalAmounts = orders.reduce(function(sum, order) {
+    // sum is the value of the past function, the first being '0'
+    return sum + order.amount
+}, 0) 
+
+```
